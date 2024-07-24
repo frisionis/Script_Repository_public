@@ -1,0 +1,1 @@
+﻿'patrick'.Replace('p','b')

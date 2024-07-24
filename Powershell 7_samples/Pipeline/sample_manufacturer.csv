@@ -1,0 +1,13 @@
+Manufacturer,BiosVersion,CanUpdate
+Microsoft,13.1,true
+Microsoft,13.1,true
+Cisco,13.0,false
+HP,14.5,true
+Dell,12.1,false
+HP,14.6,true
+HP,13.8,true
+HP,14.5,false
+Dell,12.1,true
+Dell,12.1,false
+Microsoft,13.1,false
+Microsoft,13.8,true
