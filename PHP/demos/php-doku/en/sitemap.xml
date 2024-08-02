@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://docuapi.com/main.html</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/main.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/main.html"
+                />
+  </url>
+  
+  <url>
+    <loc>http://docuapi.com/errors.html</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/errors.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/errors.html"
+                />
+  </url>
+  
+  <url>
+    <loc>http://docuapi.com/categories.html</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/categories.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/categories.html"
+                />
+  </url>
+  
+  <url>
+    <loc>http://docuapi.com/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://docuapi.com/tags.html</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/tags.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/tags.html"
+                />
+  </url>
+  
+</urlset>

@@ -1,0 +1,19 @@
+Dism /online /cleanup-image /StartComponentCleanup
+Dism /online /cleanup-image /RestoreHealth
+
+Repair-WindowsImage -Online -RestoreHealth -LimitAccess
+
+DISM.exe /Online /Add-Package /PackagePath:"C:\Windows\ccmcache\jf\Windows10.0-KB5036892-x64.cab" /norestart /quiet
+
+Fehler 13
+
+net stop bits
+net stop wuauserv
+net stop appidsvc
+net stop cryptsvc
+ren %systemroot%\SoftwareDistribution SoftwareDistribution.bak
+ren %systemroot%\system32\catroot2 catroot2.bak
+net start bits
+net start wuauserv
+net start appidsvc
+net start cryptsvc

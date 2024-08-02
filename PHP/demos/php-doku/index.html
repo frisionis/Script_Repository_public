@@ -1,0 +1,1122 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.51" />
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PHP Kurs</title>
+    <link href='./slate/stylesheets/monokai.css' rel="stylesheet" media="screen" />
+<link href='./slate/stylesheets/screen.css' rel="stylesheet" media="screen" />
+<link href='./slate/stylesheets/print.css' rel="stylesheet" media="print" />
+
+<style>
+
+body {
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-size: 16px;
+}
+
+.tocify-wrapper,
+.tocify-wrapper>.search input,
+.page-wrapper .dark-box,
+.content pre, 
+.content blockquote {
+    background: #282A36;
+}
+
+.tocify-wrapper>img.logo {
+    padding: 20px;
+    max-width: 85%;
+    background: #282A36;
+}
+
+.content>h1,
+.content>h2,
+.content>h3,
+.content>h4,
+.content>h5,
+.content>h6,
+.content>p,
+.content>table,
+.content>ul,
+.content>ol,
+.content>aside,
+.content aside.warning,
+.content>dl {
+  text-shadow: 0px 0px 0px transparent;
+}
+
+.content blockquote > p {
+  font-size: 13px;
+}
+
+.content table th {
+  font-size: 14px;
+}
+
+.content hr {
+  margin: 2em 0;
+  border-top: 4px solid azure;
+  border-bottom: none;
+}
+
+.circle {
+  display: inline-block;
+  width: 21px;
+  height: 20px;
+  border: 1px solid tomato;
+  padding: 1px 1px 0 0;
+  margin-right: 5px;
+  background: tomato;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+</style>
+
+    
+<script src='./slate/javascripts/all.js'></script>
+
+    
+</head>
+<body class="index" data-languages="[ &#34;php&#34; ]">
+    <a href="#" id="nav-button">
+        <span>
+        NAV
+        <img src='./slate/images/navbar.png'/>
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        
+         <img class="logo" src='./images/logo.svg' />
+        
+        <div class="lang-selector">
+            
+            <a href="#" data-language-name="php">php</a>
+            
+        </div>
+         
+        
+        <div class="search">
+            <input type="text" class="search" id="input-search" placeholder='Search'>
+        </div>
+        <ul class="search-results"></ul>
+        
+        <div id="toc">
+        </div>
+         
+        
+        
+
+    </div>
+    <div class="page-wrapper">
+        <div class="dark-box"></div>
+        <div class="content">
+            
+    
+        
+
+<h1 id="websites-webanwendungen">Websites/Webanwendungen</h1>
+
+<p>Websites bzw. Webanwendungen werden mit Hilfe des http-Protokolls über ein Netzwerk übertragen und im Webbrowser angezeigt. Dafür müssen die Daten, aus denen die Webseite besteht, zuerst von einem Server per <code>request</code> angefordert. Danach werden die Daten per <code>response</code> an den Client geliefert. Neben der reinen Datenübertragung gibt es noch diverse Kommunikationsmöglichkeiten zwischen dem Server und dem Client. So kann der Server den Client zum Beispiel darüber informieren, wenn das angeforderte Dokument nicht zur Verfügung steht.</p>
+
+<p>Im traditionellen Webanwendungsmodell wird über den Webbrowser (<strong>Client</strong>) durch die Eingabe des Anwenders eine Anfrage an den Webserver (<strong>Server</strong>) gestellt.</p>
+
+<p><img src="./images/client-server-anfrage.svg" alt="Netzwerkanfrage traditionell" /></p>
+
+<p>Der Webserver antwortet, wenn die Anfrage erfolgreich war, mit einem <code>ok</code> und den angeforderten Daten.</p>
+
+<p>In traditionellen Webanwendungen arbeiten Webbrowser und Server <strong>synchron</strong>. Das heißt, der <strong>Webbrowser</strong> sendet eine <strong>Anfrage</strong> an den <strong>Server</strong> und wartet so lange, bis diese beantwortet wird. <strong>Asynchron</strong> hingegen bedeutet, dass die <strong>Ausführung nicht angehalten</strong> wird, um auf eine <strong>Antwort zu warten</strong>. So ist es möglich, große Bilder oder lange Textabschnitte nachzuladen, ohne dass eine neue Webseite aufgerufen werden muss. Auch die Eingaben eines Benutzers können sofort bei der Eingabe kontrolliert werden.</p>
+
+<h1 id="php">PHP</h1>
+
+<p>PHP wurde unter der Bezeichnung &ldquo;Personal Homepage Tools&rdquo; 1994 von Rasmus Lerdorf als eine Sammlung von Perl CGI-Skripten geschaffen. Diese sollten die Funktionalität seines Webauftritts erweitern. Nach mehreren Phasen der Erweiterung der PHP-Funktionalität schrieb Lerdorf eine Umsetzung in C. Kurz darauf entschloss er sich, den Quellcode zu veröffentlichen und zur Weiterentwicklung freizugeben.</p>
+
+<p>1998 schrieben Andi Gutmans und Zeev Suraski große Teile des PHP Quellcodes für ein Unversitätsprojekt um, da sie mit der Performance der bisherigen Version nicht zufrieden waren. Sie veröffentlichten PHP in der Version 3 und legten damit den Grundstein für die aktuellen Versionen. Seitdem hat sich PHP immer mehr als wesentlicher Bestandteil der Programmierung im Internet etabliert und wurde fortlaufend verbessert. Im Dezember 2015 wurde zuletzt PHP 7 veröffentlicht. Heute steht PHP für &ldquo;PHP Hypertext Preprocessor&rdquo;.</p>
+
+<h2 id="wie-funktioniert-php">Wie funktioniert PHP</h2>
+
+<p>Als Programmiersprache, die hauptsächlich auf einem <strong>Webserver</strong> eingesetzt wird, ist PHP für die Erstellung von dynamischen Inhalten für Websites bzw. Webanwendungen gedacht. PHP ist eine sog. <code>interpretierte Programmiersprache</code>. Dies bedeutet, dass ein PHP-Programm nicht, wie beispielsweise in <code>Java</code> oder <code>C++</code>, zuerst in maschinenlesbaren Bytecode umgewandelt und dann ausgeführt wird. Der PHP Interpreter führt beide Schritte, Verarbeitung des Quellcodes und Umwandlung in ausführbaren Bytecode als Prozess durch. Dies hat eine Vereinfachung im Umgang mit PHP-Code zur Folge, führt jedoch auch zu Einbußen in der Performance des Codes.</p>
+
+<p>In der Webentwicklung werden PHP-Programme auf einem Webserver ausgeführt. Hierbei sind sie für die Teile der Programmierung verantwortlich, die eine <strong>Ein- und Ausgabe von Daten</strong> ermöglichen. Weitere Einsatzgebiete sind die <strong>Steuerung einer Webanwendung</strong> (welcher Teil der Anwendung soll wann angezeigt bzw. ausgeführt werden) und <strong>Berechnungen</strong>.</p>
+
+<h2 id="zusammenspiel-php-html-und-css">Zusammenspiel PHP, HTML und CSS</h2>
+
+<blockquote>
+<p><span class="circle">1</span> HTML und PHP mischen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&lt;<span style="color:#ff79c6">h1</span>&gt;HTML und PHP mischen&lt;/<span style="color:#ff79c6">h1</span>&gt;
+
+<span style="color:#ff79c6">&lt;?php</span> <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;h3&gt;... ist erlaubt.&lt;/h3&gt;&#34;</span> <span style="color:#ff79c6">?&gt;</span>
+
+&lt;<span style="color:#ff79c6">p</span>&gt;PHP-Code darf im <span style="color:#ff79c6">&lt;?php</span> <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;strong&gt;HTML-Quelltext&lt;/strong&gt;&#34;</span>; <span style="color:#ff79c6">?&gt;</span> auftauchen.&lt;/<span style="color:#ff79c6">p</span>&gt;
+
+&lt;<span style="color:#ff79c6">p</span>&gt;Gerne auch <span style="color:#ff79c6">&lt;?php</span> <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;strong&gt;mehrmals&lt;/strong&gt;&#34;</span>; <span style="color:#ff79c6">?&gt;</span>.&lt;/<span style="color:#ff79c6">p</span>&gt;
+</code></pre></div>
+<p>In der Webentwicklung ist es wichtig, zwischen den Begriffen <strong>Frontend</strong> und <strong>Backend</strong> zu unterscheiden. <strong>HTML</strong> und <strong>CSS</strong> sind für das Frontend zuständig, d.h. für das grundlegende Layout und die Gestaltung einer Website/Webanwendung und die Darstellung der von PHP zur Vefügung gestellten Daten. <strong>PHP</strong> ist für das Backend zuständig und agiert dabei als &ldquo;Gehirn&rdquo; im Hintergrund und sorgt für die Steuerung der Prozesse, die für eine korrekte Funktion der Website/Webanwendung notwendig sind. Beispielsweise kann PHP entscheiden, unter welcher Bedingung ein bestimmter Teil der Website/Webanwendung angezeigt wird.</p>
+
+<p><span class="circle">1</span> Es ist möglich und üblich HTML- und PHP-Code in einer Datei zu mischen. Dies ist für Einsteiger in die PHP-Programmierung meist sehr praktisch, da man Vorkenntnisse in HTML/CSS direkt einsetzen kann und schnell zu ansehnlichen Ergebnissen kommt. Es ist nicht notwendig, spezielle Techniken für die Erstellung von Benutzeroberflächen zu lernen.</p>
+
+<aside class="warning">
+    Bei fehlender Planung birgt diese Möglichkeit leider auch das Risiko von sog. <strong>Spaghetti-Code</strong>, d.h. Code der sehr unübersichtlich und somit schwer wartbar ist. Eine möglichst weitgehende Trennung von Anzeigelogik und Anwendungslogik gilt deshalb als erstrebenswert.
+</aside>
+
+    
+        
+
+<h1 id="grundlagen-der-programmierung">Grundlagen der Programmierung</h1>
+
+<h2 id="anweisungen">Anweisungen</h2>
+
+<blockquote>
+<p>Anweisungen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#6272a4">// Gibt &#34;Hallo Welt&#34; aus
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Hallo Welt&#34;</span>;
+
+    <span style="color:#6272a4">// Bindet die Datei header.php in die aktuelle php-Datei ein.
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">include</span> <span style="color:#f1fa8c">&#34;header.php&#34;</span>;
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p>Programme bestehen neben Kontrollstrukturen (<em>siehe</em> Kap. Verzweigungen und Kap. Schleifen) zu einem großen Anteil aus <strong>Anweisungen (Befehlen)</strong>, die dem Computer genau vorgeben, was zu tun ist. Sie werden in PHP <strong>immer</strong> mit einem Semikolon abgeschlossen.</p>
+
+<h2 id="speicherung-von-werten">Speicherung von Werten</h2>
+
+<blockquote>
+<p>Variablen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+    <span style="color:#8be9fd;font-style:italic">$punkte</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">30</span>;
+    <span style="color:#8be9fd;font-style:italic">$aktuellerGegner</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Sauron&#34;</span>;
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Konstanten</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+    <span style="color:#ff79c6">const</span> SOZVERSNR <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;1234567&#34;</span>;
+    <span style="color:#ff79c6">const</span> PI <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3.14159265359</span>;
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<h3 id="variablen">Variablen</h3>
+
+<p>Programme können <strong>Werte im Arbeitsspeicher</strong> des ausführenden Computers speichern. Diese <strong>Speicherplätze</strong> erhalten im <strong>Programm</strong> eine <strong>Bezeichnung</strong>. Die Kombination aus Bezeichner und Speicherplatz wird <strong>Variable</strong> genannt. Variablen werden zur Laufzeit des Programms genutzt, um z.B. Berechnungen durchzuführen. Auch Daten, die für die Ausführung des Programms notwendig sind, werden über Variablen abgerufen.</p>
+
+<p>In PHP werden Variablen mit dem Dollarzeichen <code>$</code> erstellt (deklariert). Wird einer Variablen während der Laufzeit des Programms ein neuer Wert zugewiesen, dann verfällt der bisher gespeicherte Wert.</p>
+
+<p>Einer Variablen wird der <strong>Wert</strong>, den sie <strong>speichern</strong> soll, über das <strong>Gleichheitszeichen</strong> zugewiesen. Der Wert auf der rechten Seite des Gleichheitszeichens wird dem Bezeichner auf der linken Seite zugewiesen. Man nennt dies <strong>Initialisierung</strong>.</p>
+
+<h3 id="konstanten">Konstanten</h3>
+
+<p>Eine Konstante speichert, ähnlich wie eine Variable, einen Wert. Einer Konstanten darf allerdings <strong>während der Laufzeit</strong> kein neuer Wert zugewiesen werden. Seit PHP 5.3 können Konstanten mit dem Schlüsselwort <code>const</code> erstellt werden.</p>
+
+<h2 id="datentypen">Datentypen</h2>
+
+<p>Variablen und Konstanten speichern Werte und machen diese Werte über einen Bezeichner zugänglich. Die gespeicherten Werte können
+unteschiedliche Arten von Daten enthalten. PHP kennt folgende <strong>Datentypen</strong>:</p>
+
+<table>
+<thead>
+<tr>
+<th>Datentyp</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>integer</td>
+<td>Ganzzahl ohne Nachkommastellen</td>
+</tr>
+
+<tr>
+<td>double</td>
+<td>Zahlen mit Nachkommastellen</td>
+</tr>
+
+<tr>
+<td>string</td>
+<td>Zeichenkette, also ein beliebiger Text</td>
+</tr>
+
+<tr>
+<td>boolean</td>
+<td>Wahrheitswert, kann den Wert <code>TRUE</code> oder <code>FALSE</code> annehmen</td>
+</tr>
+
+<tr>
+<td>array</td>
+<td>siehe Kap. Arrays</td>
+</tr>
+
+<tr>
+<td>null</td>
+<td>steht für &ldquo;nichts&rdquo;, eine Variable mit dem Wert <code>NULL</code> existiert zwar, enthält aber keinen Wert</td>
+</tr>
+
+<tr>
+<td>object</td>
+<td>Container der Eigenschaften und Methoden enthält</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="informationen-an-php-programme-übergeben">Informationen an PHP-Programme übergeben</h2>
+
+<p>Die meisten Webseiten leben vom Austausch mit Ihren Benutzern und der Benutzer untereinander. Diese kommentieren und diskutieren in Foren, benutzen eine Suchmaschine, schreiben Artikel, oder bestellen Produkte. Interaktionen dieser Art sind nur möglich, wenn die Website/Webanwendung in der Lage ist, Informationen entgegenzunehmen, zu verarbeiten und wieder auszugeben (anzuzeigen). Da PHP eine Programmiersprache ist, die ausdrücklich für das Internet entwickelt wurde, nutzt es dessen Möglichkeiten, um diese Interaktion möglich zu machen.</p>
+
+<h3 id="übergabe-von-informationen-per-url">Übergabe von Informationen per URL</h3>
+
+<blockquote>
+<p><span class="circle">1</span> HTML-Datei mit Links, an die Parameter angehängt werden</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;produkt.php?artikelnummer=201&#34;</span>&gt;Ein Smartphone&lt;/<span style="color:#ff79c6">a</span>&gt;
+&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;produkt.php?artikelnummer=202&#34;</span>&gt;Ein Tablet&lt;/<span style="color:#ff79c6">a</span>&gt;
+&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;produkt.php?artikelnummer=203&#34;</span>&gt;Hausschuhe mit Püscheln&lt;/<span style="color:#ff79c6">a</span>&gt;</code></pre></div>
+<blockquote>
+<p><span class="circle">2</span> PHP-Datei, die URL-Parameter ausliest</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$_GET</span>[<span style="color:#f1fa8c">&#39;artikelnummer&#39;</span>];
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p><span class="circle">1</span> PHP nutzt das <strong>http-Protokoll</strong>, um Daten zwischen unterschiedlichen Webseiten zu übertragen. Dieses stellt u.a. die <strong>GET</strong>-Anfragemethode zur Verfügung, mit welcher Daten an den <strong>URL</strong> (Uniform Resource Locator) angehängt werden können. Die <strong>GET-Methode</strong> fragt den Server an, die in der URL genannte Datei an den Client (meist ein Browser) auszuliefern. Bei einer PHP-Datei wird diese aber nicht direkt an den Browser zurückgeliefert, sondern zunächst vom PHP-Interpreter verarbeitet und in HTML umgewandelt. Das generierte HTML wird dann an den Browser gesendet. Dies geschieht nach folgendem Muster:</p>
+
+<p><code>protokoll://hostname/pfad/zur/datei.php?parameter1=wert1&amp;parameter2=wert2</code></p>
+
+<p>Beispiel:</p>
+
+<p><a href="http://tollewebsite.org/suche.php?begriff=php" target="_blank">http://tollewebsite.org/suche.php?begriff=php</a></p>
+
+<h3 id="auslesen-der-url-parameter">Auslesen der URL-Parameter</h3>
+
+<p>Um die Informationen, die per URL übertragen wurden, nutzen zu können, stellt PHP sog. <strong>superglobale
+Variablen</strong> zur Verfügung. Diese sind allen PHP-Skripten auf dem Server zugänglich, auf welchem PHP installiert ist.</p>
+
+<p><span class="circle">2</span> Die superglobale Variable <strong>$_GET</strong> ist ein Array (<em>siehe</em> Arrays), welches alle Schlüssel-Wert-Paare enthält, die der PHP-Datei per <strong>http-Anfrage</strong> übermittelt wurden.</p>
+
+<h3 id="übergabe-von-informationen-per-formular">Übergabe von Informationen per Formular</h3>
+
+<blockquote>
+<p><span class="circle">3</span> Information werden per Formular an eine zweite Datei übergeben</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#6272a4">&lt;!-- Datei: formular-2-dateien.php !--&gt;</span>
+
+&lt;<span style="color:#ff79c6">form</span> <span style="color:#50fa7b">method</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;post&#34;</span> <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;verarbeitung.php&#34;</span>&gt;
+
+    &lt;<span style="color:#ff79c6">p</span>&gt;Wie ist Ihr Name?:&lt;/<span style="color:#ff79c6">p</span>&gt;
+    &lt;<span style="color:#ff79c6">p</span>&gt;&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;benutzer&#34;</span>&gt;&lt;/<span style="color:#ff79c6">p</span>&gt;
+
+    &lt;<span style="color:#ff79c6">p</span>&gt;Hintergrundfarbe umstellen?           
+        &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;checkbox&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;lieblingsfarbe&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;red&#34;</span> /&gt;Rot      
+    &lt;/<span style="color:#ff79c6">p</span>&gt;
+
+    &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;submit&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Absenden&#34;</span> /&gt;
+
+&lt;/<span style="color:#ff79c6">form</span>&gt;</code></pre></div>
+<blockquote>
+<p><span class="circle">4</span> Verarbeitung der übergebenen Daten</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+
+<span style="color:#6272a4">// Datei: verarbeitung.php
+</span><span style="color:#6272a4"></span>
+<span style="color:#8be9fd;font-style:italic">$h1</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&lt;h1&gt;Hallo &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;benutzer&#39;</span>] <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;/h1&gt;&#34;</span>;
+
+<span style="color:#8be9fd;font-style:italic">$hgFarbe</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;lieblingsfarbe&#39;</span>];
+
+<span style="color:#ff79c6">?&gt;</span>
+
+&lt;<span style="color:#ff79c6">html</span>&gt;
+&lt;<span style="color:#ff79c6">head</span>&gt;
+    &lt;<span style="color:#ff79c6">title</span>&gt;Lieblingsfarbe&lt;/<span style="color:#ff79c6">title</span>&gt;
+&lt;/<span style="color:#ff79c6">head</span>&gt;
+
+&lt;<span style="color:#ff79c6">body</span> <span style="color:#50fa7b">style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;background: </span><span style="color:#ff79c6">&lt;?php</span> <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$hgFarbe</span>; <span style="color:#ff79c6">?&gt;</span><span style="color:#f1fa8c">;&#34;</span>&gt;
+
+<span style="color:#ff79c6">&lt;?php</span> <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$h1</span>; <span style="color:#ff79c6">?&gt;</span>
+
+&lt;/<span style="color:#ff79c6">body</span>&gt;
+&lt;/<span style="color:#ff79c6">html</span>&gt;
+</code></pre></div>
+<blockquote>
+<p><span class="circle">5</span> Formularverarbeitung in einer Datei</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    
+    <span style="color:#8be9fd;font-style:italic">$h1</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&lt;h1&gt;Hallo &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;benutzer&#39;</span>] <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;/h1&gt;&#34;</span>;
+
+    <span style="color:#8be9fd;font-style:italic">$hgFarbe</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$_POST</span>[<span style="color:#f1fa8c">&#39;lieblingsfarbe&#39;</span>];
+
+<span style="color:#ff79c6">?&gt;</span>
+
+<span style="color:#ff79c6">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#ff79c6">html</span>&gt;
+&lt;<span style="color:#ff79c6">head</span>&gt;
+    &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">charset</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;UTF-8&#34;</span>&gt;
+    &lt;<span style="color:#ff79c6">title</span>&gt;Formularverarbeitung in der selben Datei&lt;/<span style="color:#ff79c6">title</span>&gt;
+
+    &lt;<span style="color:#ff79c6">style</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text/css&#34;</span>&gt;
+        <span style="color:#ff79c6">body</span> {
+            <span style="color:#ff79c6">font-size</span>: <span style="color:#bd93f9">20</span><span style="color:#8be9fd">px</span>;
+            <span style="color:#ff79c6">font-family</span>: Verdana, <span style="color:#ff79c6">sans-serif</span>;
+        }            
+    &lt;/<span style="color:#ff79c6">style</span>&gt;        
+&lt;/<span style="color:#ff79c6">head</span>&gt;
+
+&lt;<span style="color:#ff79c6">body</span> <span style="color:#50fa7b">style</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;background: </span><span style="color:#ff79c6">&lt;?php</span> <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$hgFarbe</span>; <span style="color:#ff79c6">?&gt;</span><span style="color:#f1fa8c">;&#34;</span>&gt;
+    
+    &lt;<span style="color:#ff79c6">form</span> <span style="color:#50fa7b">method</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;post&#34;</span> <span style="color:#50fa7b">action</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">&lt;?php</span> <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$_SERVER</span>[<span style="color:#f1fa8c">&#39;PHP_SELF&#39;</span>]; <span style="color:#ff79c6">?&gt;</span><span style="color:#f1fa8c">&#34;</span>&gt;
+
+        &lt;<span style="color:#ff79c6">p</span>&gt;Wie ist Ihr Name?:&lt;/<span style="color:#ff79c6">p</span>&gt;
+        &lt;<span style="color:#ff79c6">p</span>&gt;&lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;text&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;benutzer&#34;</span>&gt;&lt;/<span style="color:#ff79c6">p</span>&gt;
+
+        &lt;<span style="color:#ff79c6">p</span>&gt;Hintergrundfarbe umstellen?           
+            &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;checkbox&#34;</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;lieblingsfarbe&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;red&#34;</span> /&gt;Rot      
+        &lt;/<span style="color:#ff79c6">p</span>&gt;
+
+        &lt;<span style="color:#ff79c6">input</span> <span style="color:#50fa7b">type</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;submit&#34;</span> <span style="color:#50fa7b">value</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Absenden&#34;</span> /&gt;
+
+    &lt;/<span style="color:#ff79c6">form</span>&gt;
+
+&lt;<span style="color:#ff79c6">body</span> &gt;
+
+<span style="color:#ff79c6">&lt;?php</span> <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$h1</span>; <span style="color:#ff79c6">?&gt;</span>
+    
+&lt;/<span style="color:#ff79c6">body</span>&gt;
+&lt;/<span style="color:#ff79c6">html</span>&gt;
+</code></pre></div>
+<p>Als zweite Möglichkeit, Parameter an PHP zu übergeben, bieten sich HTML-Formulare an. Die Besucher einer Webseite füllen ein Formular mit Daten aus und senden es ab. Auf der Zielseite kann PHP die gesendeten Daten auswerten und auf die Eingaben reagieren. Formulare stellen das wichtigste Mittel zur Kommunikation mit den Nutzern einer Website/Webanwendung dar.</p>
+
+<p><span class="circle">3</span> Bei einem HTML-Formular bestimmt das <code>action</code>-Attribut des <code>form</code>-Elementes, an welche Datei die Daten aus dem Formular übertragen werden. Hierbei gibt es <strong>zwei</strong> Möglichkeiten.</p>
+
+<p><span class="circle">4</span> Die Daten an eine weitere, externe Datei übergeben und dort verarbeitet.</p>
+
+<p><span class="circle">5</span>Die Informatioinen werden an die Datei übergeben, die das Formular enthält.</p>
+
+<p>Das <code>action</code>-Attribut kann also einen Verweis auf eine <strong>andere Datei</strong> oder auf <strong>sich selbst</strong> enthalten. Um einen Verweis auf sich selbst zu erstellen, wird die superglobale Variable $_SERVER verwendet: <code>$_SERVER[&quot;PHP_SELF&quot;]</code> (siehe nebestehenden Code). Bei einem Verweis auf eine externe Datei wird der Pfad zur Datei angegeben (sich selbst).</p>
+
+<p>Als zweites wichtiges Attribut des <code>form</code>-Elementes, ist das <code>method</code>-Attribut zu nennen. Dieses gibt an, welche http-Methode zur Übertragung der Daten genutzt wird. Neben der schon bekannten <strong>GET-Methode</strong>, kann man hier auch die <strong>POST-Methode</strong> einsetzen.</p>
+
+<h3 id="unterschied-get-und-post">Unterschied GET und POST</h3>
+
+<p>Bei der <strong>GET-Methode</strong>, werden die zu übertragenden Daten an den URL angehängt. Das gilt auch für Formulare.
+Dies hat den Vorteil, dass URL-Parameter als Teil des URL in einem Lesezeichen (Bookmark) aufgenommen werden kann. Nachteilig ist, dass alle übertragenen Daten im Adressfeld des Browser sichtbar sind. Somit ist die die
+<strong>GET-Methode</strong> nicht für sicherheitsrelevante Daten, wie Passwörter oder Kreditkartennummern geeignet. Zudem ist die Menge der zu übertragenden Daten browserabhägig begrenzt.</p>
+
+<p>Die <strong>POST-Methode</strong> überträgt die Daten im Body der <strong>http-Anfrage</strong>. Damit sind die Inhalte nicht ohne Weiteres einsehbar und die Menge der übertragbaren Daten ist grundsätzlich nicht eingeschränkt. Allerdings sind deshalb die URL-Parameter auch nicht als Lesezeichen nutzbar. Die <strong>POST-Methode</strong> sollte immer bei der Übertragung von sicherheitsrelevanten Daten verwendet werden.</p>
+
+<h3 id="das-name-attribut-für-einzelne-formular-elemente">Das name-Attribut für einzelne Formular-Elemente</h3>
+
+<p>Die im <code>form</code>-Element enthaltenen einzelnen Formularlemente, wie <code>input</code>, <code>select</code> oder <code>textarea</code> verfügen über das <code>name</code>-Attribut. Der Wert, den dieses HTML-Attribut enthält, wird von PHP als &ldquo;Variable&rdquo; (genauer gesagt, Array-Index) genutzt, um den Wert, der in das Formularfeld eingegebenen Daten zu speichern (siehe nebenstehenden Code).</p>
+
+<h2 id="operatoren">Operatoren</h2>
+
+<p>Ein <strong>Operator</strong> verknüpft zwei <strong>Operanden</strong> zu einem <strong>neuen Wert</strong>. Diese Verknüpfung nennt man <strong>Ausdruck</strong>. In der PHP Programmierung gibt es unterschiedliche Arten von Operatoren:</p>
+
+<h3 id="zuweisungsoperator">Zuweisungsoperator</h3>
+
+<blockquote>
+<p><span class="circle">1</span> Zuweisungsoperator</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$vorname</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Montgomery&#34;</span>;
+    <span style="color:#8be9fd;font-style:italic">$nachname</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Burns&#34;</span>;
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p><span class="circle">1</span> Weist einer Variablen einen Wert zu.</p>
+
+<h3 id="arithmetischer-operator-rechenvorschrift">Arithmetischer Operator (Rechenvorschrift)</h3>
+
+<blockquote>
+<p><span class="circle">2</span> Arithmetische Operatoren</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$summe</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">2</span>;
+    <span style="color:#8be9fd;font-style:italic">$differenz</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span> <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">2</span>;
+    <span style="color:#8be9fd;font-style:italic">$produkt</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">4</span> <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">5</span>;
+    <span style="color:#8be9fd;font-style:italic">$quotient</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">6</span> <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2</span>;
+    <span style="color:#6272a4">// Rest einer Ganzzahldivision, ergibt hier den Wert 1
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">$modulo</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">7</span> <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">2</span>;
+    <span style="color:#8be9fd;font-style:italic">$ergebnis</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">4</span>;
+    <span style="color:#8be9fd;font-style:italic">$ergebnis</span> <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">2</span>) <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">4</span>;
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p><span class="circle">2</span> Berechnet einen neuen Wert aus zwei oder mehr vorgegebenen Werten.
+Es gelten die mathematischen Regeln für die Reihenfolge der Berechnung:</p>
+
+<ul>
+<li>Von links nach rechts</li>
+<li>Punkt vor Strich</li>
+<li>Klammern haben Vorrang</li>
+</ul>
+
+<aside class="notice">
+Die weiteren Operatoren spielen eine wichtige Rolle bei der Behandlung der folgenden Themen und werden deshalb hier zunächst ohne Codebeispiele aufgeführt.
+</aside>
+
+<h3 id="vergleichsoperator">Vergleichsoperator</h3>
+
+<p>Vergleicht zwei oder mehr vorgegebene Werte und liefert einen <strong>Boolschen Wert (true oder false)</strong>. Der
+Vergleichsoperator wird in Verzweigungen eingesetzt, um eine oder mehrere Bedingungen auf ihren Wahrheitswert zu überprüfen.</p>
+
+<p><em>Beispiele:</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Vergleichsoperator</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>$a <strong>&gt;</strong> $b</td>
+<td>größer als</td>
+</tr>
+
+<tr>
+<td>$a <strong>&gt;=</strong> $b</td>
+<td>größer als oder gleich</td>
+</tr>
+
+<tr>
+<td>$a <strong>&lt;</strong> $b</td>
+<td>kleiner als</td>
+</tr>
+
+<tr>
+<td>$a <strong>&lt;=</strong> $b</td>
+<td>kleiner als oder gleich</td>
+</tr>
+
+<tr>
+<td>$a <strong>!=</strong> $b</td>
+<td>ungleich</td>
+</tr>
+
+<tr>
+<td>$a <strong>==</strong> $b</td>
+<td>gleich</td>
+</tr>
+
+<tr>
+<td>$a <strong>===</strong> $b</td>
+<td>Wert und Datentyp sind gleich</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="logischer-operator">Logischer Operator</h3>
+
+<p>Verbindet <strong>Vergleichsoperatoren</strong> zu komplexeren Ausdrücken und liefert einen <strong>Boolschen Wert (Wahrheitswert)</strong>.</p>
+
+<p><em>Beispiele:</em></p>
+
+<table>
+<thead>
+<tr>
+<th>Logischer&nbsp;Operator</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>$a &gt; $b <strong>||</strong> $c &lt; $d</td>
+<td>logisches ODER, linker <strong>oder</strong> rechter Vergleich muss <code>true</code> ergeben, um insgesamt <code>true</code> zurückzugeben</td>
+</tr>
+
+<tr>
+<td>$a &gt; $b <strong>&amp;&amp;</strong> $c &lt; $d</td>
+<td>logisches UND, linker <strong>und</strong> rechter Vergleich müssen true ergeben, um insgesamt <code>true</code> zurückzugeben</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="inkrementoperator">Inkrementoperator</h3>
+
+<p>Erhöht den Wert einer Variablen um 1. Der Inkrementoperator wird häufig in Schleifen als Zählmechanismus eingesetzt.
+Er ist eine verkürzte Schreibweise von <code>i = i + 1</code>.</p>
+
+<p><em>Beispiel:</em></p>
+
+<p>i<strong>++</strong></p>
+
+<h2 id="verzweigungen-verschiedene-zweige-eines-programms-ausführen">Verzweigungen (Verschiedene Zweige eines Programms ausführen)</h2>
+
+<blockquote>
+<p><span class="circle">1</span> Einfache Verzweigung</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$a</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>;
+    <span style="color:#8be9fd;font-style:italic">$b</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>;
+
+    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$a</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">$b</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;a ist größer als b&#34;</span>;
+    }
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">2</span> Verzweigung mit else-Zweig</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$a</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>;
+    <span style="color:#8be9fd;font-style:italic">$b</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>;
+
+    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$a</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#8be9fd;font-style:italic">$b</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;a ist größer als b&#34;</span>;
+    } <span style="color:#ff79c6">else</span> {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;a ist kleiner oder gleich b&#34;</span>;
+    }
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">3</span> Mehrere Bedingungen abfragen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$belag</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>;
+
+    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$belag</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben Pepperoni gewählt&#34;</span>;
+    } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$belag</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">2</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben Salami gewählt&#34;</span>;
+    } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$belag</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">3</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben Mozzarella gewählt&#34;</span>;
+    } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$belag</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">4</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben Schinken gewählt&#34;</span>;
+    } <span style="color:#ff79c6">else</span> {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben keinen Belag gewählt. Geizhals.&#34;</span>;
+    }
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">4</span> Fallunterscheidungen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$belag</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>;
+
+    <span style="color:#ff79c6">switch</span> (belag) {
+        <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">1</span><span style="color:#ff79c6">:</span>
+            <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben Pepperoni gewählt&#34;</span>;
+            <span style="color:#ff79c6">break</span>;
+        <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">2</span><span style="color:#ff79c6">:</span>
+            <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben Salami gewählt&#34;</span>;
+            <span style="color:#ff79c6">break</span>;
+        <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">3</span><span style="color:#ff79c6">:</span>
+            <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben Mozzarella gewählt&#34;</span>;
+            <span style="color:#ff79c6">break</span>;
+        <span style="color:#ff79c6">case</span> <span style="color:#bd93f9">4</span><span style="color:#ff79c6">:</span>
+            <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben Schinken gewählt&#34;</span>;
+            <span style="color:#ff79c6">break</span>;
+        <span style="color:#ff79c6">default</span><span style="color:#ff79c6">:</span>
+            <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Sie haben keinen Belag gewählt. Geizhals.&#34;</span>;
+    }
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">5</span> Verzweigung mit logischen Operatoren</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$zahl</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">20</span>;
+
+    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$zahl</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">10</span> <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#8be9fd;font-style:italic">$zahl</span> <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">20</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Die Zahl liegt ZWISCHEN 10 und 20&#34;</span>;
+    }
+
+    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$zahl</span> <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">10</span> <span style="color:#ff79c6">||</span> <span style="color:#8be9fd;font-style:italic">$zahl</span> <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">20</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Die Zahl liegt NICHT ZWISCHEN 10 und 20&#34;</span>;
+    }
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p>Eine Verzweigung ist ein Programmabschnitt, der nur unter <strong>bestimmten Bedingungen</strong> ausgeführt wird. Die zu prüfende Bedingung befindet
+ sich zwischen den runden <code>()</code> Klammern.</p>
+
+<h3 id="einfache-verzweigung">Einfache Verzweigung</h3>
+
+<p><span class="circle">1</span> Dieser Programmabschnitt besteht aus einem <strong>Test</strong> und einem <strong>Anweisungsblock</strong>. Der Test wird zuerst ausgeführt, liefert er den Wert <code>wahr</code>, dann wird der entsprechende Anweisungsblock ausgeführt.</p>
+
+<h3 id="verzweigung-mit-else-zweig">Verzweigung mit else-Zweig</h3>
+
+<p><span class="circle">2</span> Sollen Anweisungen ausgeführt werden, wenn die Bedingung den Wert <code>falsch</code> liefert, dann wird ein <code>else</code>-Zweig an die Bedingung angehängt.</p>
+
+<h3 id="mehrere-bedingungen-abfragen">Mehrere Bedingungen abfragen</h3>
+
+<p><span class="circle">3</span> Wenn mehrere Bedingunen hintereinander überprüft werden sollen, wird der <code>else</code>-Zweig um eine oder mehrere Bedingung erweitert.</p>
+
+<h3 id="fallunterscheidungen">Fallunterscheidungen</h3>
+
+<p><span class="circle">4</span> Werden sehr viele Fallunterscheidungen hintereinandergeschrieben, kann die Übersichtlichkeit des Programmiercodes leiden. Deshalb gibt es als alternative Schreibweise zu <code>else if</code>-Verzweigungen die sog. Fallunterscheidungen.</p>
+
+<h3 id="verzweigungen-mit-logischen-operatoren">Verzweigungen mit logischen Operatoren</h3>
+
+<p><span class="circle">5</span> Sollen meherere Bedingungen gleichzeitig abgefragt werden, dann kommen <strong>logische Operatoren</strong> zum Einsatz. Diese veknüpfen
+mehrere Bedingungen zu einem Ausdruck, der wiederum <code>true</code> oder <code>false</code> zurückgibt.</p>
+
+<h2 id="schleifen-programmteile-wiederholen">Schleifen (Programmteile wiederholen)</h2>
+
+<blockquote>
+<p><span class="circle">1</span> While-Schleife</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+    <span style="color:#6272a4">// Zählervariable deklarieren und initialisieren
+</span><span style="color:#6272a4"></span>    <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>;
+
+    <span style="color:#6272a4">// Laufbedingung überprüfen
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">while</span> (<span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">5</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$i</span>;
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;br&gt;&#34;</span>;
+        <span style="color:#6272a4">// Zählervariable hochzählen
+</span><span style="color:#6272a4"></span>        <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>;
+    }
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">2</span> For-Schleife</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#6272a4">// (Zählervariable erstellen, Laufbedingung überprüfen, Zählervariable hochzählen)
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">10</span>; <span style="color:#8be9fd;font-style:italic">$i</span><span style="color:#ff79c6">++</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$i</span>;
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;br&gt;&#34;</span>;
+    }
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">3</span> Verschachtelte for-Schleife</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;table border=</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">1</span><span style="color:#f1fa8c">\&#34;</span><span style="color:#f1fa8c">&gt;&#34;</span>;
+
+    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">$zeile</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; <span style="color:#8be9fd;font-style:italic">$zeile</span> <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">5</span>; <span style="color:#8be9fd;font-style:italic">$zeile</span><span style="color:#ff79c6">++</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;tr&gt;&#34;</span>;
+            <span style="color:#6272a4">// Variante: $zelle &lt;= $zeile;
+</span><span style="color:#6272a4"></span>            <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">$zelle</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>; <span style="color:#8be9fd;font-style:italic">$zelle</span> <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">5</span>; <span style="color:#8be9fd;font-style:italic">$zelle</span><span style="color:#ff79c6">++</span>) {
+                <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;td&gt;&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$zeile</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34; / &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$zelle</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;/td&gt;&#34;</span>;
+            }
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;/tr&gt;&#34;</span>;
+    }
+
+    <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;/table&gt;&#34;</span>;
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p>Eine Schleife sorgt dafür, dass ein Programmabschnitt <strong>wiederholt</strong> ausgeführt wird. Die <strong>Anzahl</strong> der Wiederholungen wird von einer <strong>Laufbedingung</strong> bestimmt, die eine <strong>Zählervariable</strong> überprüft und den Wert <code>true</code> oder <code>false</code> liefert.</p>
+
+<p>Als grundlegende Varianten sind</p>
+
+<p><span class="circle">1</span> <code>while</code>-Schleifen und</p>
+
+<p><span class="circle">2</span><code>for</code>-Schleifen</p>
+
+<p>zu nennen.</p>
+
+<p>Beide Schleifen führen im genannten Beispiel zum selben Ergebnis. Die <code>for</code>-Schleife zeichnet sich durch eine kompaktere Schreibweise aus,
+die alle, für die Schleifenausführung notwendigen Anweisungen, in der runden Klammer zusammenfasst. Die <code>while</code>-Schleife wird häufig dann verwendet,
+wenn die Anzahl der Schleifendurchläufe zum Zeitpunkt der Programmierung nicht bekannt ist.</p>
+
+<p><span class="circle">3</span> Schleifen können auch verschachtelt werden. Dadurch ist es möglich, komplexere Strukturen abzubilden.</p>
+
+<h2 id="numerische-arrays-mehrere-werte-in-einer-liste-speichern">Numerische Arrays (Mehrere Werte in einer Liste speichern)</h2>
+
+<blockquote>
+<p><span class="circle">1</span> Array anlegen und mit Werten füllen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+    <span style="color:#8be9fd;font-style:italic">$einkauf</span> <span style="color:#ff79c6">=</span> [];
+
+    <span style="color:#8be9fd;font-style:italic">$einkauf</span>[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Nutella&#34;</span>;
+    <span style="color:#8be9fd;font-style:italic">$einkauf</span>[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Cola&#34;</span>;
+    <span style="color:#8be9fd;font-style:italic">$einkauf</span>[<span style="color:#bd93f9">2</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Kiwis&#34;</span>;
+    <span style="color:#8be9fd;font-style:italic">$einkauf</span>[<span style="color:#bd93f9">3</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Bananen&#34;</span>;
+
+    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$einkauf</span>[<span style="color:#bd93f9">2</span>];
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">2</span> Verkürzte Syntax</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+    <span style="color:#8be9fd;font-style:italic">$einkauf</span> <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#34;Nutella&#34;</span>, <span style="color:#f1fa8c">&#34;Cola&#34;</span>, <span style="color:#f1fa8c">&#34;Kiwis&#34;</span>, <span style="color:#f1fa8c">&#34;Bananen&#34;</span>];
+    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$einkauf</span>[<span style="color:#bd93f9">2</span>];
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">3</span> Wert aus Array abrufen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+    <span style="color:#6272a4">// Wert aus Array im Browser ausgeben
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$einkauf</span>[<span style="color:#bd93f9">1</span>];
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">4</span> Alle Werte aus Array per for-Schleife abrufen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">&lt;</span> count(<span style="color:#8be9fd;font-style:italic">$einkauf</span>); <span style="color:#8be9fd;font-style:italic">$i</span><span style="color:#ff79c6">++</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$einkauf</span>[<span style="color:#8be9fd;font-style:italic">$i</span>];
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;br&gt;&#34;</span>;
+    }
+ <span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">5</span> Alle Werte aus Array per foreach-Schleife abrufen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+
+    <span style="color:#6272a4">// Ausgabe Werte
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">foreach</span> (<span style="color:#8be9fd;font-style:italic">$einkauf</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">$einkaufEinzeln</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;</span><span style="color:#f1fa8c">$einkaufEinzeln</span><span style="color:#f1fa8c">&#34;</span>;
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;br&gt;&#34;</span>;
+    }
+
+    <span style="color:#6272a4">// Ausgabe Array-Indizes und dazugehörige Werte
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">foreach</span> (<span style="color:#8be9fd;font-style:italic">$einkauf</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">$index</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#8be9fd;font-style:italic">$einkaufEinzeln</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$index</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$einkaufEinzeln</span>;
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;br&gt;&#34;</span>;
+    }
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">6</span> Wichtige Funktionen zur Array-Bearbeitung</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#6272a4">/*--- Array-Element(e) am Ende des Arrays hinzufügen */</span>
+    array_push(<span style="color:#8be9fd;font-style:italic">$einkauf</span>, <span style="color:#f1fa8c">&#34;Brötchen&#34;</span>, <span style="color:#f1fa8c">&#34;Marmelade&#34;</span>);
+    print_r(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+    <span style="color:#6272a4">/*--- Array-Element(e) am Anfang des Arrays hinzufügen */</span>
+    array_unshift(<span style="color:#8be9fd;font-style:italic">$einkauf</span>, <span style="color:#f1fa8c">&#34;Kaffee&#34;</span>, <span style="color:#f1fa8c">&#34;Honig&#34;</span>);
+    print_r(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+    <span style="color:#6272a4">/*--- Array-Element am Ende des Arrays entfernen */</span>
+    array_pop(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+    print_r(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+    <span style="color:#6272a4">/*--- Array-Element am Anfang des Arrays entfernen */</span>
+    array_shift(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+    print_r(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+    <span style="color:#6272a4">/*--- Array-Element(e) ab einer bestimmten Position im Array entfernen */</span>
+    array_splice(<span style="color:#8be9fd;font-style:italic">$einkauf</span>, <span style="color:#bd93f9">1</span>);
+    print_r(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+    <span style="color:#6272a4">/*--- Array-Element(e) ab einer bestimmten Position im Array einfügen, die &#34;0&#34; an der dritten Position bedeutet, dass kein Element entfernt wird */</span>
+    array_splice(<span style="color:#8be9fd;font-style:italic">$einkauf</span>, <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">0</span>, [<span style="color:#f1fa8c">&#34;Apfel&#34;</span>, <span style="color:#f1fa8c">&#34;Kirsche&#34;</span>]);
+    print_r(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+    <span style="color:#6272a4">/*--- Array-Element(e) ab einer bestimmten Position im Array einfügen, die &#34;2&#34; an der dritten Position bedeutet, dass zwei Element entfernt werden */</span>
+    array_splice(<span style="color:#8be9fd;font-style:italic">$einkauf</span>, <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">2</span>, [<span style="color:#f1fa8c">&#34;Apfel&#34;</span>, <span style="color:#f1fa8c">&#34;Kirsche&#34;</span>]);
+    print_r(<span style="color:#8be9fd;font-style:italic">$einkauf</span>);
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">7</span> Mehrdimensionales Array</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+
+    <span style="color:#8be9fd;font-style:italic">$arrTemp</span> <span style="color:#ff79c6">=</span> [
+        [<span style="color:#bd93f9">11</span>, <span style="color:#bd93f9">12</span>, <span style="color:#bd93f9">17</span>, <span style="color:#bd93f9">20</span>, <span style="color:#bd93f9">21</span>, <span style="color:#bd93f9">23</span>],
+        [<span style="color:#bd93f9">8</span>, <span style="color:#bd93f9">13</span>, <span style="color:#bd93f9">15</span>, <span style="color:#bd93f9">21</span>, <span style="color:#bd93f9">22</span>, <span style="color:#bd93f9">24</span>],
+        [<span style="color:#bd93f9">9</span>, <span style="color:#bd93f9">13</span>, <span style="color:#bd93f9">16</span>, <span style="color:#bd93f9">18</span>, <span style="color:#bd93f9">21</span>, <span style="color:#bd93f9">20</span>]
+    ];
+    
+    <span style="color:#6272a4">// Gibt den Wert 21 aus
+</span><span style="color:#6272a4"></span>    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$arrTemp</span>[<span style="color:#bd93f9">2</span>][<span style="color:#bd93f9">4</span>];
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">8</span> Werte eines zweidimensionalen Arrays auslesen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+
+    <span style="color:#6272a4">// Verschachtelte for-Schleife
+</span><span style="color:#6272a4"></span>    
+    <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; <span style="color:#8be9fd;font-style:italic">$i</span> <span style="color:#ff79c6">&lt;</span> count(<span style="color:#8be9fd;font-style:italic">$arrTemp</span>); <span style="color:#8be9fd;font-style:italic">$i</span><span style="color:#ff79c6">++</span>) {
+
+        <span style="color:#ff79c6">for</span> (<span style="color:#8be9fd;font-style:italic">$j</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>; <span style="color:#8be9fd;font-style:italic">$j</span> <span style="color:#ff79c6">&lt;</span> count(<span style="color:#8be9fd;font-style:italic">$arrTemp</span>[<span style="color:#8be9fd;font-style:italic">$i</span>]); <span style="color:#8be9fd;font-style:italic">$j</span><span style="color:#ff79c6">++</span>) {
+           <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;h3&gt;&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$arrTemp</span>[<span style="color:#8be9fd;font-style:italic">$i</span>][<span style="color:#8be9fd;font-style:italic">$j</span>]  <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;/h3&gt;&#34;</span>;
+        }
+
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;hr&gt;&#34;</span>;
+    }
+
+    <span style="color:#6272a4">// Verschachtelte foreach-Schleife
+</span><span style="color:#6272a4"></span>
+    <span style="color:#ff79c6">foreach</span>(<span style="color:#8be9fd;font-style:italic">$arrTemp</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">$arrTempInnen</span>) {
+
+        <span style="color:#ff79c6">foreach</span>(<span style="color:#8be9fd;font-style:italic">$arrTempInnen</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">$arrTempInnenEinzeln</span>) {
+            <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;h3&gt;&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$arrTempInnenEinzeln</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;/h3&gt;&#34;</span>;
+        }
+
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;hr&gt;&#34;</span>;
+    }
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p>Ein Array ist eine Liste von Werten. Es speichert <strong>mehrere Werte</strong> unter einer Bezeichnung. Dadurch lassen sich zusammengehörige Daten sinnvoll zusammenfassen und verarbeiten.</p>
+
+<p><span class="circle">1</span> Arrays werden mit Hilfe von rechteckigen Klammern <code>[]</code> erstellt. Um sie sinnvoll nutzen zu können, weist man
+diese Klammern einer Variablen zu. Arrays verwenden in ihrer Grundform <strong>numerische Indizes</strong>, um einzelne Werte abzuspeichern und anzusprechen.</p>
+
+<p><strong>WICHTIG:</strong> Die Nummerierung der Indizes fängt bei <strong>0</strong> an, nicht, wie man annehmen könnte, bei 1.</p>
+
+<hr />
+
+<p><span class="circle">2</span> Üblich ist die Erstellung eines Arrays mit der <strong>verkürzten Syntax</strong>. Diese führt zum selben Ergebnis wie das obige Beispiel.</p>
+
+<hr />
+
+<p><span class="circle">3</span> Um <strong>bestimmte Werte</strong> aus dem Array abzurufen, verwendet man den <strong>Variablennamen</strong> verknüpft mit <strong>eckigen Klammern</strong>, die den jeweiligen Index enthalten.</p>
+
+<hr />
+
+<p><span class="circle">4</span> Um <strong>alle Elemente</strong> eines Arrays abzurufen, kann man eine <strong>for-Schleife</strong> verwenden. Um die Laufbedingung zu bestimmen, nutzt man die Funktion <code>count</code>. Diese ermittelt die <strong>absolute</strong> Anzahl der Elemente eines Arrays.</p>
+
+<hr />
+
+<p><span class="circle">5</span> Als Alternative, um <strong>alle Elemente</strong> eines Arrays abzurufen, kann man auch eine <strong>foreach-Schleife</strong> verwenden. Diese Schleife wird ausschließlich zum bequemen Auslesen von Arrays verwendet.</p>
+
+<hr />
+
+<p><span class="circle">6</span>PHP verfügt über viele verschiedene Möglichkeiten, Arrays zu bearbeiten. Über die Funktionen <code>array_push()</code> und <code>array_unshift()</code> lassen sich Elemente einem Array hinzufügen. Mit den Funktionen <code>array_pop()</code> und <code>array_shift()</code> lassen sich Array-Elemente entfernen. Die Funktion <code>array_splice()</code> kann ab einer festgelegten Position im Array sowohl Elemente entfernen als auch hinzufügen.</p>
+
+<p>Ausführliche Referenz der Array-Funktionen:
+<a href="http://php.net/manual/de/ref.array.php" target="_blank">PHP Manual: Array Funktionen</a></p>
+
+<hr />
+
+<p><span class="circle">7</span>Es ist auch möglich und sinnvoll <strong>Arrays in Arrays</strong> zu speichern, um komplexere Datenstrukturen verarbeiten zu können. Diese Art der Verwendung nennt man <strong>mehrdimensionales</strong> Array.</p>
+
+<aside class="notice">
+Man kann sich ein zweidimensionales Array auch als Tabelle vorstellen, bei der die Indizes des äußeren Arrays die Zeilen kennzeichnen und die Indizes des inneren Arrays die Spalten. Folgende <strong>Grafik</strong> soll dies verdeutlichen.
+</aside>
+
+<p><img src="./images/array-grafik.svg" alt="Array zweidimensional" /></p>
+
+<hr />
+
+<p><span class="circle">8</span> Werte aus zweidimensionalen Arrays liest man entweder über eine verschachtelte <code>for</code>-Schleife oder eine verschachtelte <code>foreach</code>-Schleife aus.</p>
+
+<h2 id="assoziative-arrays">Assoziative Arrays</h2>
+
+<blockquote>
+<p><span class="circle">1</span> Assoziatives Array anlegen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$vorwahlen</span> <span style="color:#ff79c6">=</span> [
+        <span style="color:#f1fa8c">&#39;Hamburg&#39;</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#f1fa8c">&#39;040&#39;</span>, 
+        <span style="color:#f1fa8c">&#39;Berlin&#39;</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#f1fa8c">&#39;030&#39;</span>, 
+        <span style="color:#f1fa8c">&#39;Frankfurt&#39;</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#f1fa8c">&#39;069&#39;</span>
+    ];
+
+    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$vorwahlen</span>[<span style="color:#f1fa8c">&#39;Hamburg&#39;</span>];
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">2</span> Assoziatives Array anlegen (mehrere Anweisungen)</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$vorwahlen</span> <span style="color:#ff79c6">=</span> [];
+
+    <span style="color:#8be9fd;font-style:italic">$vorwahlen</span>[<span style="color:#f1fa8c">&#39;Hamburg&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;040&#39;</span>;
+    <span style="color:#8be9fd;font-style:italic">$vorwahlen</span>[<span style="color:#f1fa8c">&#39;Berlin&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;030&#39;</span>;
+    <span style="color:#8be9fd;font-style:italic">$vorwahlen</span>[<span style="color:#f1fa8c">&#39;Frankfurt&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;069&#39;</span>;
+
+    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$vorwahlen</span>[<span style="color:#f1fa8c">&#39;Hamburg&#39;</span>];
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">3</span> Assoziatives Array auslesen per foreach-Schleife</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span>
+    <span style="color:#8be9fd;font-style:italic">$vorwahlen</span> <span style="color:#ff79c6">=</span> [
+        <span style="color:#f1fa8c">&#39;Hamburg&#39;</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#f1fa8c">&#39;040&#39;</span>, 
+        <span style="color:#f1fa8c">&#39;Berlin&#39;</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#f1fa8c">&#39;030&#39;</span>, 
+        <span style="color:#f1fa8c">&#39;Frankfurt&#39;</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#f1fa8c">&#39;069&#39;</span>
+    ];
+
+    <span style="color:#ff79c6">foreach</span>(<span style="color:#8be9fd;font-style:italic">$vorwahlen</span> <span style="color:#ff79c6">as</span> <span style="color:#8be9fd;font-style:italic">$stadt</span> <span style="color:#ff79c6">=&gt;</span> <span style="color:#8be9fd;font-style:italic">$plz</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$stadt</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;: &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$plz</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;br&gt;&#34;</span>;
+    }
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p>Neben Zahlen kann PHP auch Strings als Indizes verwenden. Die Zeichenkette wird dabei genutzt, um den
+Wert im Array zu identifizieren und ggf. auszugeben. Ein numerischer Index wird in der Regel <code>implizit</code> erstellt, also automatisch im Hintergrund durch den PHP-Interpreter. Der assoziative Index wird
+im Gegensatz dazu <code>explizit</code> angegeben, also durch den Programmierer.</p>
+
+<p>Die Erstellung von assoziativen Array geschieht durch folgende Syntax:</p>
+
+<p><span class="circle">1</span> <code>[Schlüssel1 =&gt; Wert1, Schlüssel2 =&gt; Wert2, ... ]</code></p>
+
+<hr />
+
+<p><span class="circle">2</span> Eher unübliche Variante zur Erstellung von assoziativen Arrays</p>
+
+<hr />
+
+<p>Das Auslesen geschieht per Schleife:</p>
+
+<p><span class="circle">3</span> Alle Werte eines assoziativen Arrays werden über eine <code>foreach</code>-Schleife ausgelesen</p>
+
+<h2 id="funktionen-programme-zerlegen">Funktionen (Programme zerlegen)</h2>
+
+<blockquote>
+<p><span class="circle">1</span> Funktion mit Aufruf</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">sagHallo</span>() {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;Hallo&#34;</span>;
+    }
+
+    sagHallo();
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">2</span> Funktion mit Parametern</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">sagHallo</span>(<span style="color:#8be9fd;font-style:italic">$vorname</span>, <span style="color:#8be9fd;font-style:italic">$nachname</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;h3&gt;Hallo &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$vorname</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$nachname</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;/h3&gt;&#34;</span>;
+    }
+
+    sagHallo(<span style="color:#f1fa8c">&#34;Montgomery&#34;</span>, <span style="color:#f1fa8c">&#34;Burns&#34;</span>);
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">3</span> Funktion mit Rückgabewert</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">summe</span>(<span style="color:#8be9fd;font-style:italic">$a</span>, <span style="color:#8be9fd;font-style:italic">$b</span>) {
+        <span style="color:#8be9fd;font-style:italic">$ergebnis</span> <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">$a</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">$b</span>;
+        <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">$ergebnis</span>;
+    }
+
+    <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;h3&gt;&#34;</span> <span style="color:#ff79c6">.</span> summe(<span style="color:#bd93f9">3</span>,<span style="color:#bd93f9">7</span>) <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;/h3&gt;&#34;</span>;
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">4</span> Funktion mit Standardwerten für Parameter</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">sagHallo</span>(<span style="color:#8be9fd;font-style:italic">$vorname</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Thomas&#34;</span>, <span style="color:#8be9fd;font-style:italic">$nachname</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Mustermann&#34;</span>) {
+        <span style="color:#ff79c6">echo</span> <span style="color:#f1fa8c">&#34;&lt;h3&gt;Hallo &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$vorname</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">$nachname</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;&lt;/h3&gt;&#34;</span>;
+    }
+         
+    sagHallo();
+    sagHallo(<span style="color:#f1fa8c">&#34;Morris&#34;</span>);
+    sagHallo(<span style="color:#f1fa8c">&#34;Morris&#34;</span>, <span style="color:#ff79c6">null</span>);
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p>Eine <strong>Fuktion</strong> ist ein benannter Programmabschnitt, der <strong>eine bestimmte</strong> Aufgabe übernimmt und <strong>jederzeit wiederverwendbar</strong> ist. Man spricht in diesem Zusammenhang auch von der <strong>Modularisierung</strong> von Programmcode. Dies bedeutet, dass größere Mengen an Code in kleinere aufgeteteilt werden, die übersichtlicher und einfacher zu entwickeln sind und im Idealfall genau eine Aufgabe übernehmen. Neben einer großen Anzahl an vordefinierten Funktionen
+<a href="http://php.net/manual/de/funcref.php" target="_blank">PHP Manual: Funktionensreferenz</a>, ist es in PHP möglich, <strong>eigene</strong> Funktionen zu erstellen.</p>
+
+<p><span class="circle">1</span> Der Quellcode von Funktionen wird <strong>nicht direkt</strong> ausgeführt, sondern muss <strong>explizit</strong> aufgerufen werden.</p>
+
+<hr />
+
+<p><span class="circle">2</span> Funktionen könnnen über sog. <strong>Parameter</strong> Werte entgegennehmen und verarbeiten.</p>
+
+<hr />
+
+<p><span class="circle">3</span> Ebenso können sie <strong>Werte zurückgeben</strong>.</p>
+
+<hr />
+
+<p><span class="circle">4</span> Es ist auch möglich, Parameter einer Funktion mit Standardwerten zu versehen, um sicher zu gehen, dass die Funktion korrekt ausgeführt wird, wenn keine <strong>Argumente</strong> übergeben werden.</p>
+
+<hr />
+
+<h2 id="gültigkeitsbereiche-von-variablen">Gültigkeitsbereiche von Variablen</h2>
+
+<blockquote>
+<p><span class="circle">1</span> Globaler Gültigkeitsbereich von Variablen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#8be9fd;font-style:italic">$ausgabe</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Außerhalb des Blocks&#34;</span>;
+
+    <span style="color:#ff79c6">if</span> (<span style="color:#ff79c6">true</span>) {
+        <span style="color:#8be9fd;font-style:italic">$ausgabe</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Innerhalb des Blocks&#34;</span>;
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$ausgabe</span>; <span style="color:#6272a4">// &#34;Innerhalb des Blocks&#34;
+</span><span style="color:#6272a4"></span>    }
+
+    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$ausgabe</span>; <span style="color:#6272a4">// &#34;Innerhalb des Blocks&#34;
+</span><span style="color:#6272a4"></span>
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">2</span> Lokaler Gültigkeitsbereich von Variablen in Funktionen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">zeigeTextAn</span>() {
+        <span style="color:#8be9fd;font-style:italic">$text</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Hallo Welt!&#34;</span>; 
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$text</span>;
+    }
+
+    zeigeTextAn();
+
+    <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$text</span>;
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<blockquote>
+<p><span class="circle">3</span> Zugriff auf den globalen Gültigkeitsbereich in Funktionen</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#ff79c6">&lt;?php</span> 
+
+    <span style="color:#8be9fd;font-style:italic">$text</span> <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Hallo Welt!&#34;</span>;
+
+    <span style="color:#ff79c6">function</span> <span style="color:#50fa7b">zeigeTextAn</span>() {
+        <span style="color:#ff79c6">global</span> <span style="color:#8be9fd;font-style:italic">$text</span>; 
+        <span style="color:#ff79c6">echo</span> <span style="color:#8be9fd;font-style:italic">$text</span>;
+    }
+
+    zeigeTextAn();
+
+<span style="color:#ff79c6">?&gt;</span>
+</code></pre></div>
+<p>Der Gültigkeitsbereich von Variablen bestimmt, welcher Code Zugriff auf die gespeicherten Werte der Variablen hat.
+In PHP haben Variablen einen <strong>globalen</strong> und <strong>keinen</strong> Block-Gültigkeitsbereich. Unter einem (Code-)Block versteht man die Anweisungen und Kontrollstrukturen, die zwischen <strong>geschweiften</strong> Klammern <code>{}</code> stehen.</p>
+
+<p><span class="circle">1</span> Dies bedeutet, dass Variablen auch ausserhalb des Blocks verfügbar sind und ihnen somit neue Werte zugewiesen werden können.</p>
+
+<hr />
+
+<p><span class="circle">2</span> Eine Ausnahme bilden dabei Funktionen, diese verfügen über einen lokalen Gültigkeitsbereich.</p>
+
+<hr />
+
+<p><span class="circle">3</span> Um innerhalb einer Funktion dennoch auf globale Variablen zugreifen zu können, nutzt man das reservierte Wort <strong>global</strong>.</p>
+
+    
+
+        </div>
+        <div class="dark-box">
+            
+            <div class="lang-selector">
+                
+                <a href="#" data-language-name="php">php</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

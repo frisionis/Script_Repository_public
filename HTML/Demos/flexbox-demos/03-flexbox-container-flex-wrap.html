@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-Container: flex-wrap und flex-flow</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1em;
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+        }
+        
+        .container {
+           width: 35%;
+           margin: 0 auto;
+           background: #999;
+           border: 1px solid black;
+           display: flex;
+           flex-direction: row;
+           /* === Standardeinstellung === */
+           /* flex-wrap: nowrap;  */
+           /* flex-wrap: wrap;   */
+           /* === Kombinierte Eigenschaft für flex-direction und flex-wrap === */ 
+           /* flex-flow: row wrap; */
+        }
+
+        .eins,
+        .zwei,
+        .drei {
+            padding: 2em 5em;
+        } 
+
+        .eins {
+            background: #cfc;
+        } 
+
+        .zwei {
+            background: #fcc;
+        } 
+        
+        .drei {
+            background: #ccf;
+        }  
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="eins">Eins</div>
+        <div class="zwei">Zwei</div>
+        <div class="drei">Drei</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kosten Kalkualtor - Schritt 1</title>
+    <style>
+        p {
+            display: flex;
+            flex-flow: row;
+        }
+        label {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- pattern="^\d+(?:\.\d{1,2})?$" step=".01" bedeutet, dass nur Zahlen akzeptiert werden, die nicht mehr als 2 Kommastellen haben. -->
+    <div>
+        <p>Bitte füllen Sie dieses Formular aus, um die Gesamtkosten zu berechnen</p>
+
+        <form action="kalkulation-01.php" method="post">
+
+            <p>
+                <label>
+                    Preis in €:
+                </label>
+                <input type="number" name="preis" min="0" placeholder="Preis in €" pattern="^\d+(?:\.\d{1,2})?$" step=".01">
+            </p>
+            <p>
+                <label>
+                    Anzahl:
+                </label>
+                <input type="number" name="anzahl" min="1" value="1">
+            </p>
+            <p>
+                <label>
+                    Rabatt in €:
+                </label>
+                <input type="number" name="rabatt" min="0" placeholder="Rabatt in €" pattern="^\d+(?:\.\d{1,2})?$" step=".01">
+            </p>
+            <p>
+                <label>Steuern in %:
+
+                </label>
+                <input type="number" name="steuern" min="0" placeholder="Steuern in %" pattern="^\d+(?:\.\d{1,2})?$"
+                    step=".01">
+            </p>
+            <p>
+                <label>
+                    Wie viele Zahlungsraten?
+                </label>
+                <input type="number" name="raten" min="1" placeholder="Anzahl der Raten">
+            </p>
+
+            <input type="submit" name="submit" value="Berechnen">
+
+        </form>
+
+    </div>
+</body>
+
+</html>

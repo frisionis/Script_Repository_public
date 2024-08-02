@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://docuapi.com/nn/main.html</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/main.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/main.html"
+                />
+  </url>
+  
+  <url>
+    <loc>http://docuapi.com/nn/errors.html</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/errors.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/errors.html"
+                />
+  </url>
+  
+  <url>
+    <loc>http://docuapi.com/nn/categories.html</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/categories.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/categories.html"
+                />
+  </url>
+  
+  <url>
+    <loc>http://docuapi.com/nn/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://docuapi.com/nn/tags.html</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://docuapi.com/tags.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="nn"
+                href="http://docuapi.com/nn/tags.html"
+                />
+  </url>
+  
+</urlset>

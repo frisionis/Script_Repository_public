@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+
+    Um Flexbox-Linien (im Gegensatz zu Flexbox-Kindern) entlang der Querachse auszurichten, verwendet man die Eigenschaft align-content. Der Einsatz von align-content macht nur dann Sinn, wenn mehrere Flexbox-Linien vorhanden sind. 
+
+    align-content kann folgende Werte annehmen:
+
+    stretch         -> Flexbox-Linien dehnen sich aus und nehmen den zur Verfügung 
+                       stehenden Raum ein (Standardwert).    
+    flex-start      -> Richtet die Flexbox-Linien bündig am Anfang der Querachse aus.
+    flex-end        -> Richtet die Flexbox-Linien bündig am Ende der Querachse aus.
+    center          -> Richtet die Flexbox-Linien mittig entlang der Querachse aus.
+    space-between   -> Verteilt die Flexbox-Linien gleichmäßig entlang der Querachse. Die erste
+                       Flexbox-Linie wird bündig am Anfang des Flexbox-Containers positioniert, 
+                       das letzte Flexbox-Linie bündig am Ende der Flexbox-Containers. 
+                       Die restlichen Flexbox-Linien werden so in der verbleibenden Fläche verteilt, 
+                       dass der freie Platz gleichmäßig verteilt wird.
+    space-around    -> Verteilt die Flexbox-Linien gleichmäßig entlang der Querachse, mit gleichmäßigem 
+                       Abstand auf beiden Seiten des Flex-Kindes. Dies führt dazu, dass das erste und das
+                       letzte Flexbox-Kind nur über eine Einheit als Abstand zum Flexbox-Container verfügen.
+
+-->
+
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-Container: align-content</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1em;
+            margin: 0;
+            font-family: "Calibri Light";
+        }
+        
+        .container {
+           max-width: 50%;
+           margin: 0 auto;
+           display: flex;  
+           flex-flow: column nowrap;
+        }
+ 
+        .eins,
+        .drei {
+            padding: 2em;
+        } 
+
+        .innen {
+            padding: 10px;
+        }
+
+        .eins {
+            background: #ccc;
+        } 
+
+        .zwei {
+            height: 20em;
+            display: flex;
+            flex-flow: row wrap;
+            /* === Standardwert === */
+            /* align-content: stretch; */
+            /* align-content: flex-start; */
+            /* align-content: flex-end; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+            /* align-content: space-around; */
+            background: #444;
+        }
+        
+        .drei {
+            background: #999;
+        }  
+        
+        .alpha {
+            background: #cfc;
+            width: 50%;
+            /* height: 50px; */
+        } 
+
+        .beta {
+            background: #fcc;
+            width: 50%;
+            /* height: 50px; */
+        }  
+        
+        .gamma {
+            background: #ccf;
+            width: 50%;
+            /* height: 50px; */
+        }
+
+        .theta {
+            background: rgb(255, 227, 204);
+            width: 50%;
+            /* height: 50px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="eins">Eins</div>
+        <div class="zwei">
+            <div class="innen alpha">Alpha</div>
+            <div class="innen beta">Beta </div>
+            <div class="innen gamma">Gamma</div>
+            <div class="innen theta">Theta</div>
+        </div>
+        <div class="drei">Drei</div>
+    </div>
+</body>
+
+</html>

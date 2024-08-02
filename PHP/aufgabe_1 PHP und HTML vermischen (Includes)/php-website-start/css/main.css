@@ -1,0 +1,230 @@
+/****************** Helferklassen */
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+/************************* Basis */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    height: 100%;
+    background-color: rgb(233, 242, 247);
+}
+
+h2 {
+    line-height: 1;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+td {
+    border: 1px solid #fff;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+ul li {
+    list-style: none;
+}
+
+/************************* Layout */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+section, #site-footer {
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+#buchung {
+    display: flex;
+}
+
+.buchungsformular {
+    flex: 0 1 60%;
+    padding-right: 2rem;
+}
+
+aside {
+    flex: 0 1 40%; 
+}
+
+#infos {
+    display: flex;
+}
+
+.wetter {
+    flex: 0 1 40%;
+    padding-right: 2rem;
+}
+
+.region {
+    flex: 0 1 60%;
+}
+
+/******************** Navigation */
+
+#site-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    height: 70px;
+    padding: 1rem;
+    width: 100%;
+    z-index: 200;
+    transition: all 0.5s linear;
+}
+
+#site-navigation ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+#site-navigation a {
+    display: block;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 1rem 1rem 1rem 1rem;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+#site-navigation a:hover {
+    color: purple;
+}
+
+#site-navigation h1 {
+    line-height: 1;
+    color: purple;
+}
+
+#site-navigation.change-background {
+    background-color: #9DCFEA;
+    color: #fff;
+}
+
+/******************** Site Header */
+
+#site-header {
+    background: url(../img/horizont.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: -70px;
+}
+
+#site-header h2, #site-header td {
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 2rem;
+}
+
+#site-header h3 {
+    border: 1px solid #ffffff;
+    padding: 1rem;
+}
+
+#site-header h2 span {
+    font-size: 2rem;
+    text-shadow:0 0 2px black;
+}
+
+/********************** Formulare */
+
+.btn-submit {
+    background-color: purple;
+    border: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1rem;
+    padding: 0.3rem;
+    width: 200px;
+}
+
+.buchungsformular div {
+    background-color: #fff;
+    display: flex;
+}
+
+div.btn-container {
+    background-color: transparent;
+    justify-content: flex-end;
+}
+
+.buchungsformular label {
+    align-self: center;
+    flex: 1 1 20%;
+    padding-left: 10px;
+}
+
+.buchungsformular input, .buchungsformular select {
+    flex: 1 1 70%;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-left: 2px solid #f0efef;
+    padding: .5rem;
+}
+
+/********************** Seite Produkte */
+
+.produkte {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.produkt {
+    flex: 1 1 49%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+.produkt:nth-child(2n+0) {
+    margin-right: 0;
+}
+
+.produkt .details {
+    background-color: #ffffff;
+    padding: 1rem;
+}
+
+/********************** Seite Region */
+
+.region p:first-child {
+    margin-top: 0;
+}

@@ -1,0 +1,3 @@
+$ExcludeCluster = ((Get-Cluster Horizon-VDI| get-vmhost | Select Name | out-string).Trim() -replace "Name","" -replace "----",""  -replace " ","").Trim() -replace "`n","|" -replace "`n",""
+Get-VM | where {$_ -notmatch (Get-VM -tag persistent_snapshot) -and $_ -notmatch (Get-VM -tag manuell-snapshot-cleanup)} |  Where {$_.VMHost -notmatch $ExcludeCluster} 
+| Where-Object {$_.Created -lt (Get-Date 1/Feb/2017)} | Remove-Snapshot -Confirm:$false

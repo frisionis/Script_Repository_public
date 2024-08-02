@@ -1,0 +1,18 @@
+chmod 655 user.sh -> ist nötig damit das skipt ausführbar ist
+./user.sh -> führt das skript aus
+
+SKRIPT
+
+#!/bin/sh
+Name=read
+UID=read
+GNAME=read
+GID=read
+echo "Gruppen Name eingeben"
+read GNAME
+echo "GID eingeben"
+read GID
+echo "Name eingeben"
+read Name 
+sudo groupadd -g $GID $GNAME
+sudo useradd $Name -m -d /home/$Name -g $GNAME -k /etc/skel.lehrer

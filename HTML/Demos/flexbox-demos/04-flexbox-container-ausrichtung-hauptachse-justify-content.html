@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+
+    Flexbox-Kinder können entlang der Haupt- und Querachse ausgerichtet werden.
+
+    Um Flexbox-Kinder entlang der Hauptachse auszurichten, verwendet man die Eigenschaft
+    justify-content. 
+
+    justify-content kann folgende Werte annehmen:
+    
+    flex-start      -> Richtet die Flexbox-Kinder bündig am Anfang der Hauptachse aus (Standardwert).
+    flex-end        -> Richtet die Flexbox-Kinder bündig am Ende der Hauptachse aus.
+    center          -> Richtet die Flexbox-Kinder mittig entlang der Hauptachse aus.
+    space-between   -> Verteilt die Flexbox-Kinder gleichmäßig entlang der Hauptachse. 
+                       Das erst Flexbox-Kind wird bündig am Anfang der Flexbox-Linie positioniert, 
+                       das letzte Flexbox-Kind bündig am Ende der Flexbox-Linie. Die restlichen 
+                       Flexbox-Kinder werden so in der verbleibenden Fläche angeordnet, 
+                       dass der freie Platz gleichmäßig verteilt wird.
+    space-around    -> Verteilt die Flexbox-Kinder gleichmäßig entlang der Hauptachse, 
+                       mit gleichmäßigem Abstand auf beiden Seiten des Flex-Kindes. 
+                       Dies führt dazu, dass das erste und das letzte Flexbox-Kind nur 
+                       über eine Einheit als Abstand zum Flexbox-Container verfügen.
+    space-evenly    -> Wie space-around, nur dass auch die alle Abstände, auch die 
+                       zum Flexbox-Container gleichmäßig verteilt werden.
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-Container: justify-content</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1em;
+            margin: 0;
+            font-family: "Calibri Light";
+        }
+        
+        .container {
+            max-width: 80%;
+            margin: 0 auto;
+            background: #999;
+            border: 1px solid black;
+            display: flex;
+            flex-flow: row nowrap;
+            /* === Standardwert === */
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: center; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+        }
+
+        .eins,
+        .zwei,
+        .drei {
+            padding: 2em 5em;
+        } 
+
+        .eins {
+            background: #cfc;
+        } 
+
+        .zwei {
+            background: #fcc;
+        } 
+        
+        .drei {
+            background: #ccf;
+        }  
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="eins">Eins</div>
+        <div class="zwei">Zwei</div>
+        <div class="drei">Drei</div>
+    </div>
+</body>
+
+</html>

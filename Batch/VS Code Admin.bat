@@ -1,0 +1,1 @@
+code --no-sandbox --disable-gpu-sandbox

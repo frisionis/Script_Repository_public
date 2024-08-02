@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selektoren</title>
+    <style>
+        /* =================================================================
+        
+            Universalselektor:
+            Wählt alle Elemente aus.
+        
+        =================================================================== */
+        * {
+            padding: 0;
+            margin: 0; 
+            box-sizing: border-box;
+        }
+
+        /* =================================================================
+        
+            Typ-Selektor:
+            Wählt alle Elemente des selben Typs aus. 
+        
+        =================================================================== */
+        body {
+            font-size: 1rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(73, 73, 73);
+        }
+
+        article {
+            width: 500px;
+            margin: 10px auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(73, 73, 73);
+        }
+        
+        p {
+            border: 3px solid rgb(73, 73, 73); 
+        } 
+
+        /* =================================================================
+        
+            ID-Selektor:
+            Wählt das Element aus, das ein ID-Attribut im HTML-Quelltext 
+            mit entsprechendem Wert besitzt.
+            Er darf nur einmal im HTML-Dokument vorkommen.
+        
+        =================================================================== */
+        #hauptinhalt {
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: tomato;
+        }
+
+        /* =================================================================
+        
+            Klassen-Selektor:
+            Wählt alle Elemente aus, die ein Klassen-Attribut im HTML-Quelltext 
+            mit enstsprechendem Wert besizten.
+            Er darf mehrmals im HTML-Dokument vorkommen.
+        
+        =================================================================== */
+        .hervorheben {
+            font-weight: bold;
+            background-color: yellow;
+            padding: 0 4px;
+        }
+
+        /* =================================================================
+        
+            Pseudo-Klasse:
+            Erstellt einen Klassenselektor, zu dem es KEIN entsprechendes
+            Klassen-Attribut im HTML-Quelltext gibt.
+        
+        =================================================================== */
+        /* Unbesuchter Link */
+        a:link {
+            color: #FF0000;
+        }
+
+        /* Besuchter Link */
+        a:visited {
+            color: #00FF00;
+        }
+
+        /* Maus über Link */
+        a:hover {
+            color: #FF00FF;
+        }
+
+        /* Solange der Link geklickt wird */
+        a:active {
+            color: #0000FF;
+        } 
+
+        /* =================================================================
+        
+            Pseudo-Element:
+            Erstellt einen Selektor, zu dem es KEIN entsprechendes
+            HTML-Element gibt.
+        
+        =================================================================== */
+        span::before {
+            content: "\01F525";
+            padding-right: 5px;
+        } 
+        
+        /* =================================================================
+        
+            Gruppieren:
+            Mehreren Selektoren die gleichen Formatierungen zuweisen.
+        
+        =================================================================== */
+        h3, h4 {
+            margin-bottom: 20px;
+        }
+
+        /* =================================================================
+        
+            Kombinatoren:
+            Verketten zwei Selektoren unter Verwendung von Bedingungen
+        
+        =================================================================== */
+        
+        /* === Nachfahrenselektor === */
+        #hauptinhalt span {
+            border: 3px dashed black; 
+            background-color: red;
+        }
+    
+        
+        /* === Kindselektor === */
+        article > p {
+            border: 3px dashed black; 
+        } 
+    </style>
+</head>
+
+<body>
+   <article>
+        <header>
+            <img src="island-gletscher.jpg" alt="Gletscher Island Südküste">
+            <h3><a href="#">Gletscher an der Südküste Islands</a></h3>
+            <h4>Solheimajokull</h4>
+        </header>
+        <h4>Gletscher in Island</h4>
+        <p id="hauptinhalt">
+            Die <span class="hervorheben">Gletscher Islands</span> bedecken große Teile der Insel, insgesamt etwa elf Prozent der Landesoberfläche. Sie prägen daher das Landschaftsbild Islands maßgeblich. Das Wort <span class="hervorheben">jökull</span> bedeutet im Isländischen Gletscher und ist daher im Namen nahezu jedes Gletschers zu finden... 
+        </p>
+        <footer>
+            <span class="hervorheben">Kategorie: Landschaft</span> | <span>Kamera: Nikon D3200</span>
+            <p>&copy; Sven Fricke</p>
+        </footer>
+   </article>
+</body>
+
+</html>

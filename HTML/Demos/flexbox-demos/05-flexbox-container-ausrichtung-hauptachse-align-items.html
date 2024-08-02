@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+
+    Flexbox-Kinder können entlang der Haupt- und Querachse ausgerichtet werden.
+
+    Um Flexbox-Kinder entlang der Querachse auszurichten, verwendet man die Eigenschaft
+    align-items. 
+
+    HINWEIS: align-items legt Werte für ALLE Flex-Kinder fest. Mit align-self können diese
+             für EINZELNE Flex-Kinder wieder überschrieben werden. Hierzu werden die o.g. Werte 
+             benutzt.
+
+    align-items kann folgende Werte annehmen:
+    
+    auto        -> Wird nur bei align-self angewendet. Übernimmt den Wert von align-items 
+                   des Eltern-Elements oder stretch, wenn es kein Eltern-Element gibt.
+    flex-start  -> Richtet die Flexbox-Kinder bündig am Anfang der Querachse aus (Standardwert).
+    flex-end    -> Richtet die Flexbox-Kinder bündig am Ende der Querachse aus.
+    center      -> Richtet die Flexbox-Kinder mittig entlang der Querachse aus.
+    baseline    -> Richtet die Flexbox-Kinder entlang der Grunlinie (gedachte Linie, auf der 
+                   Text steht) der Querachse aus.
+    stretch     -> Dehnt die Flexbox-Kinder entlang der Querachse soweit aus, bis der 
+                   Flexbox-Container ausgefüllt ist. min/max-width und max/height Angaben 
+                   werden jedoch eingehalten.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-Container: align-items</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1em;
+            margin: 0;
+            font-family: "Calibri Light";
+        }
+        
+        .container {
+            height: 30em;
+            max-width: 80%;
+            margin: 0 auto;
+            background: #999;
+            border: 1px solid black;
+            display: flex;
+            flex-flow: row nowrap;
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            /* align-items: stretch;  */
+            /* align-items: baseline; */
+        }
+
+        .eins,
+        .zwei,
+        .drei {
+            padding: 2em 5em;
+        } 
+
+        .eins {
+            background: #cfc;
+        } 
+
+        .zwei {
+            background: #fcc;
+        } 
+        
+        .drei {
+            background: #ccf;
+        }  
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="eins">Eins</div>
+        <div class="zwei">Zwei</div>
+        <div class="drei">Drei</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+
+    Flex-Kinder nehmen in den Grundeinstellungen den verfügbaren Platz auf der Querachse der Flexbox ein. Auf der Hauptachse nehmen die Flex-Kinder soviel Platz ein, wie ihr Inhalt einnimmt. Um das Verhältnis des einzunehmenden Raums zu bestimmen, nutzt man die "flex"-Eigenschaft.
+    
+    "flex" ist eine zusammengesetzte Eigenschaft aus den einzelnen Eigenschaften:
+    
+    * flex-grow   -> gibt einen Verhältniswert an, um den das Element sich ausdehnen kann
+    * flex-shrink -> gibt einen Verhältniswert an, um den das Element schrumpfen kann
+    * flex-basis  -> gibt einen Basiswert an für die Elementgröße an
+
+    WICHTIG: "flex-grow" verteilt den freien Platz nachdem der Platz für den Inhalt berechnet wurde 
+             "flex-basis" verteilt den gesamtem zur Verfügung stehenden Platz nach Prozentwerten  
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-Kinder: flex</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1em;
+            margin: 0;
+            font-family: Helvetica, sans-serif;
+        }
+        
+        .container {
+           width: 80%;
+           margin: 0 auto;
+           background: #999;
+           border: 1px solid black;
+           display: flex;  
+           flex-flow: row wrap;
+        }
+
+        .eins,
+        .zwei,
+        .drei {
+            padding: 2em 5em;
+        } 
+
+        .eins {
+            background: #cfc;
+            /* === Grundeinstellung === */
+            /* flex: 0 1 auto; */
+            /* flex: 0 0 35%; */
+            /* flex: 1 1 35%; */
+            /* flex: 1 1 auto; */
+            /* === 4 Anteile werden insgesamt verteilt, wenn 120px zu verteilen sind, dann werden diesem Element 120/4*2 Pixel zugeschlagen === */
+            /* flex: 2 1 auto; */
+            /* flex: 0 1 25%; */
+        } 
+
+        .zwei {
+            background: #fcc;
+            /* === Grundeinstellung === */
+            /* flex: 0 1 auto; */
+            /* flex: 0 0 35%; */
+            /* flex: 1 1 35%; */
+            /* flex: 1 1 auto; */
+            /* flex: 1 1 auto; */
+            /* flex: 0 1 50%; */
+        } 
+        
+        .drei {
+            background: #ccf;
+            /* === Grundeinstellung === */
+            /* flex: 0 1 auto; */
+            /* flex: 0 0 35%; */
+            /* flex: 1 1 35%; */
+            /* flex: 1 1 auto; */
+            /* flex: 1 1 auto; */
+            /* flex: 2 1 25%; */
+        }  
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="eins">Eins</div>
+        <div class="zwei">Zwei</div>
+        <div class="drei">Drei</div>
+    </div>
+</body>
+
+</html>

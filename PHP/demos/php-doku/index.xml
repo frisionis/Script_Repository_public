@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP Kurs</title>
+    <link>http://docuapi.com/</link>
+    <description>Recent content on PHP Kurs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    
+	<atom:link href="http://docuapi.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PHP Grundlagen</title>
+      <link>http://docuapi.com/main.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docuapi.com/main.html</guid>
+      <description>Websites/Webanwendungen Websites bzw. Webanwendungen werden mit Hilfe des http-Protokolls über ein Netzwerk übertragen und im Webbrowser angezeigt. Dafür müssen die Daten, aus denen die Webseite besteht, zuerst von einem Server per request angefordert. Danach werden die Daten per response an den Client geliefert. Neben der reinen Datenübertragung gibt es noch diverse Kommunikationsmöglichkeiten zwischen dem Server und dem Client. So kann der Server den Client zum Beispiel darüber informieren, wenn das angeforderte Dokument nicht zur Verfügung steht.</description>
+    </item>
+    
+    <item>
+      <title>Grundlagen der Programmierung</title>
+      <link>http://docuapi.com/foundations.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docuapi.com/foundations.html</guid>
+      <description>Grundlagen der Programmierung Anweisungen  Anweisungen
+ &amp;lt;?php // Gibt &amp;#34;Hallo Welt&amp;#34; aus  echo &amp;#34;Hallo Welt&amp;#34;; // Bindet die Datei header.php in die aktuelle php-Datei ein.  include &amp;#34;header.php&amp;#34;; ?&amp;gt;  Programme bestehen neben Kontrollstrukturen (siehe Kap. Verzweigungen und Kap. Schleifen) zu einem großen Anteil aus Anweisungen (Befehlen), die dem Computer genau vorgeben, was zu tun ist. Sie werden in PHP immer mit einem Semikolon abgeschlossen.
+Speicherung von Werten  Variablen</description>
+    </item>
+    
+  </channel>
+</rss>

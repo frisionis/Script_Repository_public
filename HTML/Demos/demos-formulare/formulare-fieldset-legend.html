@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Formular Demo "input"</title>
+    </head>
+    <body>
+
+        <form action="test.php" method="POST">
+            <fieldset>
+                <legend>Beschriftung</legend>
+                <p>
+                    <label for="vorname">Vorname</label>
+                    <input id="vorname" type="text" placeholder="Vorname">
+                </p>
+
+                <p>
+                    <label for="nachname">Nachname</label>
+                    <input id="nachname" type="text" placeholder="Nachname" maxlength="10">
+                </p>
+
+                <p>
+                    <button type="submit">Absenden</button>
+                </p>
+            </fieldset>
+        </form>
+    </body>
+</html>

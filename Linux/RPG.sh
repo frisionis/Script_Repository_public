@@ -1,0 +1,187 @@
+#!/bin/sh
+STWAFFE="100"
+text=read
+Zelle=read
+WEG=read
+aschwert="Abgebrochenes Schwert"
+Leben="100"
+ENEMY="100"
+ENEMY2="500"
+ENEMY3="1000"
+ENEMY4="2000"
+ENEMY5="5000"
+KAMPF=read
+ESTUS=+25
+INV=read
+HOF=read
+FLUECHTEN=read
+#DMG=$(shuf -i 20-40 -n 1)
+#DMG2=$(shuf -i 40-70 -n 1)
+#DMG3=$(shuf -i 1-100 -n 1)
+#PARRY=shuf -i 1-10 -n 1
+rm Inventar.txt
+
+until [ $Leben -le 0 ]
+do
+	echo "Du befindest dich in einem Turm-ähnlichen Gefängniss."
+	echo "Über dir, an einem fernen Fenster, steht ein Mann in Elitärer, glänzender Rüstung."
+	echo "Er wirft dir etwas zu. Es ist ein Schlüssel."
+	echo "wie lautet dein Name?"
+	read "text"
+	echo $text "nimmt den Schlüssel."
+	echo "Möchtest du dich in der Zelle UMGUCKEN oder versuchen die Zelle AUFSCHLIESSEN"
+	read "Zelle"
+		if [ $Zelle = UMGUCKEN ]
+			then
+				echo "Du findest ein abgebrochenes Schwert." $ashwert
+				echo "Abgebrochenes Schwert" >> Inventar.txt
+				echo "ESTUS" >> Inventar.txt
+				echo "Du nimmst das Schwert in die Hand und �ffnest die Zelle."
+		elif [ $Zelle = AUFSCHLIESSEN ]
+			then
+				 echo "Du schließt die Zelle auf."
+		fi
+				until [ $WEG = RECHTS ]
+					do
+					echo "Du befindest dich in einem schmalen Gang."
+					echo "Gehst du RECHTS oder LINKS?."
+					read "WEG"
+					if [ $WEG = LINKS ]
+						then
+						echo "Du stehst vor einer Sackgasse"
+						elif [ $WEG = RECHTS ]
+							then
+							echo "Du gehts den engen Gang entlang und triffst auf einen modrigen Körper der Langsam auf dich zu Schlurft. Er hat wie du, ein Abgebrochenes Schwert."
+					fi
+				done
+						until [ $ENEMY -le 0 ] || [ $Leben -le 0 ]
+							do
+								DMG=$(shuf -i 20-40 -n 1)
+								DMG2=$(shuf -i 40-70 -n 1)
+								DMG3=$(shuf -i 1-100 -n 1)
+								PARRY=$(shuf -i 1-10 -n 1)
+
+								echo "Du kannst nicht fliehen! was tust du? ANGREIFEN, VERTEIDIGEN, INVENTAR oder PARRIEREN"
+								read "KAMPF"
+									if [ $KAMPF = ANGREIFEN ]
+										then ENEMY=$(( ENEMY-51 ))
+											echo "Du schlägst zu und triffst. Der Faulende Körper taumelt zurück."
+											echo "Der gegner Schlägt zurück doch verfehlt wegen des Treffers."
+									elif [ $KAMPF = VERTEIDIGEN ]
+										then
+											echo "Du versuchst den Schlag zu parrieren doch verfehlst. Du bekommst nimmst Schaden!"
+												Leben=$(( Leben-$DMG ))
+											echo $Leben
+									elif [ $KAMPF = PARRIEREN ]
+										then $PARRY
+											if [ $PARRY -gt 5 ]
+												then
+													echo "Du Parrierst erfolgreich und f�gst dem Gegner konter Schaden zu"
+													ENEMY=$(( ENEMY-$DMG3 ))
+													echo $ENEMY
+													STWAFFE=$(( STWAFFE-1 ))
+											elif [ $PARRY -lt 5 ]
+												then
+													echo "Dein versuch zu Parrieren schlug fehl. Du bekommst Schaden"
+													LEBEN=$(( LEBEN-$DMG ))
+													echo $LEBEN
+													STWAFFE=$(( STWAFFE-1 ))
+											fi
+									elif [ $KAMPF = INVENTAR ]
+										then
+											cat Inventar.txt
+											echo "Gegenstand nutzen?"
+											read INV
+												if [ $INV = ESTUS ]
+													then Leben=$(( Leben+$ESTUS ))
+ 														if  [ $Leben -ge "100" ]
+														then
+															until [ $Leben -le 100 ]
+																do Leben=$(( Leben-1 ))
+															done
+														fi
+												elif [ $INV = AbgebrochenesSchwert ]
+													then echo "Haltbarkeit der Waffe =" $aschwert $STWAFFE
+												fi
+									fi
+						done
+							echo "Der Gegner wurde besiegt."
+							echo "Du gehst den Weg weiter entlang, durch enge Gänge und feuchte Keller."
+							echo "Bis du an einer Leiter stehst. Du kletterst die Leiter nach oben, durchschreitest eine Tür und"
+							echo "erblickst das Tageslicht! Du befindest dich nun in einem Hof."
+							echo "Geradeaus ist ein großes Tor, drei mal so groß wie du. In der mitte des Hof's erkennst du ein Schwert im Boden."
+							echo "Du weißt nicht woher, jedoch erkennst du sofort, dass es ein Bonfire ist. Ein ort an dem Untote Regenerieren."
+							echo "Was tust du? Ans BONFIRE setzen o. gehst du durch das TOR?"
+
+							read HOF
+								if [ $HOF = BONFIRE ]
+									then
+										while [ $Leben -le 99 ]
+											do Leben=$(( Leben+1 ))
+											echo $Leben
+										done
+										echo "Du gehst auf das Tor zu und dr�ckst dich mit voller Kraft dagegen"
+								elif [ $HOF = TOR ]
+									then
+										echo "Du gehst auf das Tor zu und dr�ckst dich mit voller Kraft dagegen"
+								fi
+									echo "Hinter der Tür wartet ein weiterer offener Hof. Umrundet von hohen Mauern."
+									echo "Rechts und Links sind zwei G�nge, die mit vereinzelnden S�ulen vom Hof getrennt sind."
+									echo "Direkt vor dir siehst du eine leuchtende Nachricht auf dem boden, die besagt LAUF"
+									echo "was tust du? fliehe LINKS, RECHTS oder ERKUNDEST du"
+										read FLUECHTEN
+										until [ $FLUECHTEN = LINKS ] || [ $Leben -le 0 ]
+											do
+												DMG=$(shuf -i 20-40 -n 1)
+												DMG2=$(shuf -i 40-70 -n 1)
+												DMG3=$(shuf -i 1-100 -n 1)
+												PARRY=shuf -i 1-10 -n 1
+
+												if [ $FLUECHTEN = LINKS ]
+													then echo "Du entscheidest dich der Nachricht nach zu kommen und fl�chtest richtung des linken Ganges."
+														echo "Kaum machst du einen Schritt vorw�rts, h�rst du einen gewaltigen aufprall und siehst,"
+														echo "einen riesigen D�mon der sich vor dich stellt."
+														echo "Geistesgegenw�rtig beginnst du zu rennen, du wei�t, dass du keine chance hast."
+														echo "Du h�rst den Windzug w�hrend der D�mon aushohlt um mit seiner gewaltigen Keule zuzuschlagen."
+														echo "doch zu deinem Gl�ck hast du die richtige Richtung gew�hlt. Denn links am ende des Weges, siehst"
+														echo "du eine offene T�r, die du ohne zu z�gern durchschreitest."
+														echo "alles was du jetzt noch h�ren kannst ist, wie der potenzielle Gef�ngnisw�chter aufbr�llt, da"
+														echo "er sein ziel verloren hatte."
+
+												
+												elif [ $FLUECHTEN = RECHTS ]
+													then echo "Du entscheidest dich der Nachricht nach zu kommen und fl�chtest richtung des rechten Ganges."
+                                                                                                       		echo "Kaum machst du einen Schritt vorw�rts, h�rst du einen gewaltigen aufprall und siehst,"
+                                                                                                       		echo "einen riesigen D�mon der sich vor dich stellt."
+                                                                                                       		echo "Geistesgegenw�rtig beginnst du zu rennen, du wei�t, dass du keine chance hast."
+                                                                                                       		echo "Du h�rst den Windzug w�hrend der D�mon aushohlt um mit seiner gewaltigen Keule zuzuschlagen."
+														echo "Leider hast du die falsche Richtung gew�hlt und stehst vor einer sackgasse"
+														echo "Du bist gezwungen den Hof erneut zu betreten und dich dem enormen Hieb zu stellen"
+														echo "Du wirst getroffen! Wenn auch nur mit dem ende der Keule"
+														echo "Du erh�lst 40 schaden"
+															Leben=$(( Leben -$DMG ))
+																echo $Leben
+														echo "Nachdem du dich gesammelt hast entscheidest du dich so schnell es geht nach links zu"
+														echo "fl�chten."
+															if [ $FLUECHTEN = RECHTS ]
+																then unset FLUECHTEN; FLUECHTEN=LINKS; FLUECHTEN=$FLUECHTEN; set FLUECHTEN="RECHTS"
+															fi
+												elif [ $FLUECHTEN = ERKUNDEST ]
+													then echo "du Entscheidest dich die Warnung zu ignorieren, um dich in ruhe umzugucken"
+														echo "Langsam bewegst du dich vorw�rts mit der Warnung im Hinterkopf."
+														echo "Nachdem du dich nahe des Zentrum befindest, sp�rst du einen Windzug."
+														echo "Du entscheidest dich dazu zur seite auszuweichen, es war die richtige Entscheidung"
+														echo "*RUMMS* der D�mon landet neben dir, bereit zum ausholen"
+														echo "Unf�hig auszuweichen, trifft dich die Keule mit voller Wucht"
+														echo "Du verlierst 70 Leben"
+															Leben=$(( Leben-$DMG2 ))
+																echo $Leben
+														echo "Die Wucht wirft dich zur�ck, zu deinem gl�ck landest du Links orrientiert"
+														echo "Instinktiv suchst du zuflucht im linken Gang und siehst eine T�r, durch die du taumelst."
+															if [ $FLUECHTEN = ERKUNDEST ]
+																then unset FLUECHTEN; FLUECHTEN=LINKS; FLUECHTEN=$FLUECHTEN; set FLUECHTEN="ERKUNDEST"
+															fi
+												fi
+										done
+done
+echo "du bist tot"

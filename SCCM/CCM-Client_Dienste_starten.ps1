@@ -1,0 +1,5 @@
+(Get-Service 'BITS').Start()
+(Get-Service 'WinRM').Start()
+(Get-Service 'Winmgmt').Start()
+(Get-Service 'wuauserv').Start()
+(Get-Service 'CcmExec').Start()

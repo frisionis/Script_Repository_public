@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabelle einfach</title>
+    <style>
+        table, th, td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Zelle 1</td>
+            <td>Zelle 2</td>
+            <td>Zelle 3</td>
+        </tr>
+        <tr>
+            <td>Zelle 4</td>
+            <td>Zelle 5</td>
+            <td>Zelle 6</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td colspan="2">Zelle 1</td>
+            <td>Zelle 3</td>
+        </tr>
+        <tr>
+            <td>Zelle 4</td>
+            <td>Zelle 5</td>
+            <td>Zelle 6</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td rowspan="2">Zelle 1</td>
+            <td>Zelle 2</td>
+            <td>Zelle 3</td>
+        </tr>
+        <tr>
+            <td>Zelle 5</td>
+            <td>Zelle 6</td>
+        </tr>
+    </table>
+</body>
+</html>
