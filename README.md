@@ -1,4 +1,4 @@
-[alt text](image-1.png)
+![alt text](image-1.png)
 
 ## [Active Directory](./ActiveDirectory)
 Use cases for managing users, groups and computers in on prem AD 
